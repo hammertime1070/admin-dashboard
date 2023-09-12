@@ -1,5 +1,10 @@
 body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    width: 100%;
+    max-height: 100vh;
+    margin: 0;
+    padding: 0;
+
 }
 
 
@@ -7,6 +12,10 @@ body {
     display: grid;
     grid-template-columns: 1fr 4fr;
     grid-template-rows: 1fr 4fr;
+    width: 100%;
+    max-height: 100vh;
+    margin: 0;
+    padding: 0;
 }
 
 .header {
@@ -22,6 +31,10 @@ body {
 .sidebar {
     background-color: #3b82f6;
     grid-row: 1 / 3;
+    color:#eff6ff;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
 
 }
 
@@ -34,32 +47,82 @@ body {
 
 .project-container {
     grid-row: 1 / 3;
+    height: 100%;
 }
 
 .announcement-container {
     grid-column: 2 / 3;
+    justify-items: center;
+    padding-left: 1em;
+    padding-right: 1em;
+    gap: 1em;
+    height: 45%;
 }
 
 .trending-container {
     grid-column: 2 / 3;
+    justify-items: center;
+    padding-left: 1em;
+    padding-right: 1em;
+    gap:1em;
+    height: 45%;
 }
 
 .card-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 15px;
+    gap: 1em;
+    justify-items: center;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+
+.announcement-card,
+.trending-card {
+    background-color: #eff6ff;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: .5em;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.announcement-card p {
+    margin: .5em;
+}
+.trending p {
+    margin: .5em;
 }
 
 .card {
     background-color: #eff6ff;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: .5em;
+    padding: 20px;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
 }
 
-.announcement-card {
-    background-color: #eff6ff;
+.trending-card:hover,
+.announcement-card:hover,
+.card:hover {
+    transform: translateY(-5px); /* Add a slight lift effect on hover */
 }
 
-.trending-card {
-    background-color: #eff6ff;
+.card p {
+    margin-top: 10px; /* Add spacing between the title and paragraph */
+}
+
+.title {
+    font-size: 1em; /* Adjust the title font size */
+    font-weight: bold;
 }
 
 .searchbar-container {
@@ -121,4 +184,22 @@ body {
     justify-content: flex-end;
     gap:1em;
     margin-right:1em;
+}
+
+.sidebar-element img {
+    height: 1em;
+    width: 1em;
+    filter: invert(1);
+}
+
+.sidebar-element {
+    display: grid;
+}
+
+.sidebar-element {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: 1em;
+    gap:1em;
 }
